@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="700.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="phonebook.ViewController">
+    <children>
+        <Label layoutX="232.0" minHeight="16" minWidth="69" text="Telefonkönyv">
+            <font>
+                <Font size="23.0" />
+            </font>
+        </Label>
+        <SplitPane id="mainSplit" fx:id="mainSplit" dividerPositions="0.3" layoutY="29.0" prefHeight="700.0" prefWidth="800.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                    <children>
+                        <StackPane id=" menuPane" fx:id="menuPane" prefHeight="619.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+            
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="222.0" prefWidth="417.0">
+                    <children>
+                        <Pane id="exportPane" fx:id="exportPane" prefHeight="619.0" prefWidth="417.0" visible="false">
+                            <children>
+                                <Text layoutX="100.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exportálás PDF-be">
+                                    <font>
+                                        <Font size="30.0" />
+                                    </font>
+                                </Text>
+                                <Button id="buttonPDFSave" fx:id="buttonPDFSave" layoutX="183.0" layoutY="297.0" mnemonicParsing="false" onAction="#exportList" text="PDF Mentése" />
+                                <Text layoutX="182.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fájl neve">
+                                    <font>
+                                        <Font size="23.0" />
+                                    </font>
+                                </Text>
+                                <TextField id="textFieldSaveAs" fx:id="textFieldSaveAs" layoutX="152.0" layoutY="249.0" promptText="Ide írj" />
+                            </children>
+                        </Pane>
+                        <Pane id="contactPane" fx:id="contactPane" layoutX="64.0" layoutY="97.0" prefHeight="619.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <TableView id="table" fx:id="table" editable="true" prefHeight="478.0" prefWidth="556.0">
+                                    <placeholder>
+                                        <Label text="Nincs adat." />
+                                    </placeholder>
+                                    <columns>
+                                    </columns>
+                                </TableView>
+                                <TextField id="inputLastname" fx:id="inputLastname" layoutX="100.0" layoutY="482.0" prefHeight="25.0" prefWidth="175.0" promptText="Kovács" />
+                                <TextField id="inputFirstName" fx:id="inputFirstName" layoutX="100.0" layoutY="514.0" prefHeight="25.0" prefWidth="175.0" promptText="Gyula" />
+                                <TextField id="inputEmail" fx:id="inputEmail" layoutX="100.0" layoutY="545.0" prefHeight="25.0" prefWidth="175.0" promptText="test@gmail.com" />
+                                <Button id="buttonAddContact" fx:id="buttonAddContact" layoutX="286.0" layoutY="514.0" mnemonicParsing="false" onAction="#addContact" text="Új kontakt hozzáadása" />
+                            </children>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
